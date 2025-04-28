@@ -5,6 +5,7 @@ body {
   padding: 0;
   display: flex;
   justify-content: center;
+  text-align: center; /* ✅ Center all text */
 }
 
 .container {
@@ -54,17 +55,17 @@ button:disabled {
   cursor: not-allowed;
 }
 
+/* Updated note buttons layout */
 #noteButtons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ✅ 4 buttons per row */
   gap: 10px;
   margin-top: 20px;
 }
 
 #noteButtons button {
-  flex: 1 1 28%;
   padding: 12px 0;
+  font-size: 14px; /* ✅ Slightly smaller text inside note buttons */
 }
 
 .feedback {
@@ -86,7 +87,7 @@ button:disabled {
 
 .stats {
   margin-top: 30px;
-  text-align: left;
+  text-align: center; /* ✅ Center stats too */
   font-size: 16px;
 }
 
@@ -107,7 +108,7 @@ button:disabled {
     font-size: 16px;
   }
 
-  #noteButtons button {
-    flex: 1 1 45%;
+  #noteButtons {
+    grid-template-columns: repeat(3, 1fr); /* ✅ For small screens, 3 buttons per row */
   }
 }
